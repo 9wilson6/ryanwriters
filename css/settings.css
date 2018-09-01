@@ -1,0 +1,151 @@
+*{
+
+	padding: 0;
+	margin: 0;
+	/*max-width: 99vw;*/
+	overflow-y: auto;
+	overflow-x: hidden;
+	font-family:  Candara, Calibri , Segoe, 'Segoe UI', Optima, Arial;
+	font-size: 18px;
+}
+body{	
+/*background: #002D29;*/
+/*background: #002D29;*/
+/*background: #E9ECEF;*/
+background: #ccc;
+
+
+}
+
+#log_in{
+	background: url("../assets/23.jpg");
+
+	
+	/*background: url(../assets/33.jpg);*/
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	/*background: #2ECC71;*/
+	min-height: 94vh;
+	
+}
+/*#sign_up{
+
+	min-height:0 420px 0;
+	background: #3498DB;
+	background: transparent;
+}*/
+#footer{
+
+	background: #174463;
+	min-height: 80px;
+	font-size: 30px;
+	color: #fff;
+	padding-top: 20px;
+}
+#forms{
+	
+
+	/*padding: 230px 240px 0 240px;*/
+	min-height: 530px ;
+
+
+
+}
+@media only screen and (min-width: 1324px) {
+    #forms {
+        padding: 23vh 25% 0 25%;
+    }
+}
+@media only screen and (max-width: 1324px) {
+    #forms {
+        padding: 23vh 20% 0 20%;
+    }
+}
+
+
+@media only screen and (max-width: 550px) {
+    #forms {
+        padding: 23vh 5% 0 5%;
+    }
+}
+
+.btn{
+
+	width: 130px;
+}
+#NavBar{
+  position: fixed !important; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    z-index: 9999;
+/*background:#A7B3C1;*/
+background: #174463;
+    border-bottom: none;
+     -webkit-box-shadow: 0px 3px 4px 6px #7B8EA2;
+       -moz-box-shadow: 0px 3px 4px 6px #7B8EA2;
+            box-shadow: 0px 3px 4px 6px #7B8EA2;
+       margin-bottom: 9px;
+
+}
+
+
+.nav-link{
+
+	font-family: impact;
+	color: #113249;
+	font-size: 18px;
+}
+#form-message{
+	
+	font-size: 18px;
+	font-family: impact;
+	background: #ccc;
+}
+.invalid-input{
+
+	border:solid 1px red;
+}
+/*admin formatting*/
+.jumbotron{
+	/*margin-top: 45px;*/
+  /*min-height: 100%;*/
+  /*overflow-y: scroll;*/
+  padding: 0 15px 0 15px;
+  /*margin-top: 50px;*/
+ background: #F8F8F8;
+
+
+}
+#postform{
+	width: 740px;
+	margin: auto;
+}
+.admin_home_body{
+	/*background: #EEEEEE;*/
+	 background: #F8F8F8;
+/*position: fixed;*/
+/*overflow-y: scroll;*/
+margin-top: 50px;
+}
+#main_div{
+background: #EEEEEE;
+/*margin-bottom: 70px;*/
+}
+/**/
+.card2{
+	box-shadow: none;
+	margin-bottom: 30px;
+}
+
+
+
+
+
+
+h1>u{
+  font-family: impact;
+  letter-spacing: 7px;
+border-bottom: 1px dashed #005B52;
+}

@@ -1,0 +1,77 @@
+#NavBar{
+  position: fixed !important; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    z-index: 9999;
+background:#788094;
+/*background: #00897B;*/
+    border-bottom: none;
+     -webkit-box-shadow: 0px 3px 4px 6px #ccc;
+       -moz-box-shadow: 0px 3px 4px 6px #ccc;
+            box-shadow: 0px 3px 4px 6px #ccc;
+       margin-bottom: 9px;
+       z-index: 9999;
+
+}
+body{
+  /*padding-top: 100px;*/
+  /*background: url(../assets/32.jpeg);*/
+  background: #CCCCCC;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top-left;
+  overflow-x: hidden;
+}
+.nav-link{
+
+  font-family: impact;
+  /*color: #113249;*/
+  font-size: 18px;
+  
+}
+/*.jumbotron{
+  min-height: 500px;
+  padding: 0 15px 0 15px;
+ 
+
+
+}*/
+h3>u{
+  font-family: impact;
+  letter-spacing: 7px;
+border-bottom: 1px dashed #005B52;
+}
+/*.list-group-item{
+ margin: 17px 0 17px 0;
+ border-radius: 10px;
+ background: transparent;
+padding: 0;
+/*text-align: center;*/
+/*font-family: impact;
+font-size: 30px;*/
+
+
+
+#right-bar:hover{
+
+ /*font-family: monospace;*/
+ 
+}
+#right-bar{
+  margin: 0 5% 0 5%;
+  /*padding: 30px 110px;*/
+  padding-top: 20px;
+  font-size: 18px;
+  font-family: monospace, Candara, Calibri , Segoe, 'Segoe UI', Optima, Arial;
+  /*font-style: italic;*/
+
+   cursor: col-resize;
+  overflow-y: auto;
+  font-style: bold;
+  /*background: #788094;*/
+  background: #eee;
+
+   max-height: 810px;
+   color: #fff;
+}

@@ -42,6 +42,7 @@
 
 						}
 						require "db_config.php";
+						require 'functions.php';
 						$query="INSERT INTO pedding_approval( order_id, order_subject, order_topic, user_name, user_id, datei) VALUES('$order_id', '$order_subject', '$order_topic','$user_name', '$user_id','$date')";
 						$results=$db->query($query);
 						if ($results==1) {
@@ -58,7 +59,7 @@
 							foreach ($results as $result) {
 								$email=$result['email'];
 							}
-
+							$time=date('d/m/Y h:i:s a');
 			$subject="Results for order ID: ".$order_id;			
 		$message = ' <html>
 		<head>
@@ -67,7 +68,6 @@
 							<body style="background: #EEEEEE;">
 							<p>Results for order id '. $order_id.' has been handed in by '.$user_name.' ID:<strong>'. $user_id.'</strong>;</p>
 							<p> <strong>About:</strong> <br> '.$order_topic.' <br>
-							<small>deadline: <i>'.$deadline.'</i></small>
 							</p>
 							  <p>
 								<font color="#222"> <b>Time:</b>&nbsp;  &nbsp; '.$time.'</font>
@@ -79,6 +79,8 @@
 							</html>
 							';
 							$to="ryan@ryanwriters.com";
+							$sender_name=$user_name;
+							$receiver_name="Samryan";
 								sendmail($email, $to, $subject);
 		
 						}else{

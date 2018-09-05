@@ -100,7 +100,8 @@ if (mysqli_num_rows($results)>0) {
 				var user_name="<?php echo $_SESSION['name']; ?>";
 				var user_id ="<?php echo $_SESSION['id']; ?>";
 				var order_id="<?php echo $_REQUEST['id']; ?>";
-				var topic="<?php echo $topic ?>";
+				var topic='<?php echo $topic; ?>';
+
 				$.ajax({
 					type: "POST",
 					url: 'rquested.php',
@@ -108,11 +109,12 @@ if (mysqli_num_rows($results)>0) {
 						user_name: user_name,
 						user_id: user_id,
 						order_id: order_id, 
-						topic: topic
+						 topic: topic
 
 					},
 					success :  function(response){
 							if (response==1) {
+
 								alert("Application Successful");
 								window.location = "view_projects";
 								

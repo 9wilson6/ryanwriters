@@ -1,7 +1,5 @@
 <?php 
 require "admin_header.php";
-
-
 if ($_SESSION['user_type']==="Admin") {
 
 require 'db_config.php';
@@ -226,6 +224,7 @@ foreach ($results as $result) {
 				$("#revise").submit(function(e){
 					e.preventDefault();
 					var order_id= "<?php echo $order_id?>";
+					var topic="<?php echo $topic ?>";
 					var rev_instructions=$("#message").val();
 					var submit= "submit"
 					var user_id="<?php echo $user_id ?>"
@@ -238,6 +237,7 @@ foreach ($results as $result) {
 							submit: submit,
 							user_id: user_id,
 							datei: datei,
+							topic: topic,
 							form_type: form_type }
 						).done(function(data){
 							if (data==1) {

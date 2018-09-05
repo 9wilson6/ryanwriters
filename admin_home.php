@@ -1,5 +1,4 @@
 <?php 
-
 require "admin_header.php";
 if (isset($_SESSION['user_type'])) {?>
 	

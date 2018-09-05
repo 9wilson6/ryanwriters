@@ -1,10 +1,5 @@
-<meta http-equiv="refresh" content="600">
 <?php 
-
-
 require "admin_header.php";
-
-
 if ($_SESSION['user_type']==="Admin") {
 
 require 'db_config.php';
@@ -132,10 +127,13 @@ echo "<center class='h4 text-danger'>{$result['name']} Id {$result['user_id']} I
 
 
   	   ?>
-<?php }else{
+<?php
+
+ }else{
 
 	header("admin");
-}?>
+}
+?>
  <script>
 			$(document).ready(function(){
 

@@ -1,4 +1,5 @@
-<?php session_start();
+<?php
+session_start();
 date_default_timezone_set("Africa/Nairobi");
  ?>
 <!DOCTYPE html>
@@ -32,7 +33,9 @@ date_default_timezone_set("Africa/Nairobi");
 		     <?php if (isset($_SESSION['user_type'])) {?>
 		     	<a href="a_changepass"><span class="nav-link text-light"><i class=" fa fa-cog"></i></span></a>
 		     	<a href="logout.php" class="nav-link text-light"> Log Out</a>
-		   <?php  } ?>
+		   <?php  } 
+
+		   ?>
 		    </span>
 		    </ul>
        </div>

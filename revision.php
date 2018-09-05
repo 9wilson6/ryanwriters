@@ -6,8 +6,13 @@ if (isset($_POST['submit'])) {
 	
 	$order_id=$db->quote($_POST['order_id']);
 	$user_id=$_POST['user_id'];
+	$topic=$_POST['topic'];
 	
-	
+	$query="SELECT email FROM users WHere id='$user_id'";
+		$result=$db->query($query);
+		foreach ($result as $res) {
+			$email=$res['email'];
+		}
 	
 
 	if ($_POST['form_type']=="revision") {
@@ -18,10 +23,40 @@ if (isset($_POST['submit'])) {
      
 	$query="INSERT INTO onrevision(order_id, user_id, rev_instructions, deadline) VALUES ('$order_id', '$user_id', '$rev_instructions', '$datei')";
 	$result=$db->query($query);
+	require_once"functions.php";
+	$deadline=$_POST['datei'];
+	$time=date('d/m/Y h:i:s a');
+	//////////////////////////////////////////////////
+	$message = '
+							<html>
+							<body style="background: #EEEEEE;">
+							<p><strong>Order id:&nbsp;   &nbsp;'.$order_id.'</strong></p>
+							<p> <strong>About:</strong> <br> '.$topic.' <br></p>
+							  <p>
+								  <strong><font color="#FF8800"> Has been sent back for revision</font></strong><br>
+								  
+								<font color="#222"> <b>Time:</b>&nbsp;  &nbsp; '.$time.'</font>
+								 <p>Kindly check back and make the necessary adjustments</p><br>
+							 <p> for more info vaist:http://ryanwriters.com/login</p><br>
+							  </p>
+
+							  
+							</body>
+							</html>
+							';
+
+		$subject="Revise the order ID: ".$order_id;
+		$to=$email;
+		$email="ryan@ryanwriters.com";
+		$sender_name=$user_name;
+		$receiver_name="Samryan";
+		sendmail($email, $to, $subject);
+	///////////////////////////////////////////////
 	if ($result==1) {
 		$query="DELETE FROM pedding_approval where order_id='$order_id' AND user_id='$user_id'";
 		$result=$db->query($query);
 		echo $result;
+
 	
 }else{
 

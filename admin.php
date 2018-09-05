@@ -1,5 +1,5 @@
 <?php 
- require "admin_header.php";
+require "admin_header.php";
 require "db_config.php";
 ?>
 

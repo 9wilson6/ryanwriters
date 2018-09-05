@@ -9,7 +9,7 @@
 	$topic=$_POST['topic'];
 
 	require 'db_config.php';
-
+	require_once("functions.php");
 	$query="INSERT INTO onprogress (order_id, user_id, order_subject, order_topic, user_name, deadline) VALUES('$order_id', '$user_id', '$order_subject', '$order_topic', '$user_name', '$deadline') ";
 	$results=$db->query($query);
 		
@@ -25,16 +25,8 @@
 	$time=date('d/m/Y h:i:s a');
 	$deadline=date('d/m/Y h:i:s a', $deadline);
 	if ($results==1) {
-		
-		 require("PHPMailer-master/src/PHPMailer.php");
-    	 require("PHPMailer-master/src/SMTP.php");
-         require("PHPMailer-master/src/Exception.php");
-		$mail= new PHPMailer\PHPMailer\PHPMailer();
-		$mail -> setFrom("ryan@ryanwriters.com", "Ryan Writers");
-		$mail->addAddress($email, $user_name);
-		$mail->isHTML(TRUE);
 
-		$mail->Subject="Congratulations!!!!!!! ". $user_name;
+		
 		$message = ' <html>
 		<head>
 			<title>Congratulations Bid Successful</title>
@@ -53,9 +45,12 @@
 							</body>
 							</html>
 							';
-		$mail->Body=$message;
-		$send=$mail->send();
-		
+		$subject="Congratulations!!!!!!! ". $user_name;
+		$to=$email;
+		$email="ryan@ryanwriters.com";
+		$receiver_name=$user_name;
+		$sender_name="Samryan";
+		sendmail($email, $to, $subject);
 
 
 	}

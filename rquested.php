@@ -22,7 +22,8 @@ if (isset($user_name) && isset($user_id)) {
 		date_default_timezone_set("Africa/Nairobi");
 			$time=date('d/m/Y h:i:s a');
 		$to = "ryan@ryanwriters.com";
-		$subject ="Order Request";
+		$topic=wordwrap($topic, 70);
+
 		$message = '
 							<html>
 							<body style="background: #EEEEEE;">
@@ -40,12 +41,11 @@ if (isset($user_name) && isset($user_id)) {
 							</body>
 							</html>
 							';
-							// To send HTML mail, the Content-type header must be set
-							$headers  = 'MIME-Version: 1.0' . "\r\n";
-							$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-							$headers .= "From: ".$email. "\r\n";
+		$subject="Request for order ID: ".$order_id;
+		$to="ryan@ryanwriters.com";
+		sendmail($email, $to, $subject);
+		
 
-         mail($to,$subject,$message,$headers);
 
 		#######################################################################mail
 

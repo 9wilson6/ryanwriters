@@ -171,7 +171,27 @@ $directory="./RESULTS/{$order_id}/{$user_id}/";
 
 
 
-<?php }  ?>
+<?php } 
+
+function sendmail($from, $to, $subject){
+		global $user_name;
+		global $message;
+		require("PHPMailer-master/src/PHPMailer.php");
+    	 require("PHPMailer-master/src/SMTP.php");
+         require("PHPMailer-master/src/Exception.php");
+         date_default_timezone_set("Africa/Nairobi");
+		$time=date('d/m/Y h:i:s a');
+		$deadline=date('d/m/Y h:i:s a', $deadline);
+		$mail= new PHPMailer\PHPMailer\PHPMailer();
+		$mail -> setFrom($email, $user_name);
+		$mail->addAddress($to, $user_name);
+		$mail->isHTML(TRUE);
+		$mail->Subject=$subject;
+		$mail->Body=$message;
+		$mail->send();
+}
+
+ ?>
 
 
 

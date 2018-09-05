@@ -20,12 +20,21 @@
 	$results=$db->query($query);
 	
 	$result= $results;
+	
 	date_default_timezone_set("Africa/Nairobi");
 	$time=date('d/m/Y h:i:s a');
 	$deadline=date('d/m/Y h:i:s a', $deadline);
 	if ($results==1) {
-		$to = $email;
-		$subject = "Congratulations!!!!!!! ". $user_name;
+		
+		 require("PHPMailer-master/src/PHPMailer.php");
+    	 require("PHPMailer-master/src/SMTP.php");
+         require("PHPMailer-master/src/Exception.php");
+		$mail= new PHPMailer\PHPMailer\PHPMailer();
+		$mail -> setFrom("ryan@ryanwriters.com", "Ryan Writers");
+		$mail->addAddress($email, $user_name);
+		$mail->isHTML(TRUE);
+
+		$mail->Subject="Congratulations!!!!!!! ". $user_name;
 		$message = ' <html>
 		<head>
 			<title>Congratulations Bid Successful</title>
@@ -44,11 +53,11 @@
 							</body>
 							</html>
 							';
-		$headers  = 'MIME-Version: 1.0' . "\r\n";
-		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-		$headers .= "From: ryan@ryanwriters.com" . "\r\n";
+		$mail->Body=$message;
+		$send=$mail->send();
+		
 
-       mail($to,$subject,$message,$headers);
+
 	}
 } ?>
 

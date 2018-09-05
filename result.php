@@ -58,12 +58,29 @@
 							foreach ($results as $result) {
 								$email=$result['email'];
 							}
-							$to = $email;
-							$subject = "Order id ". $order_id;
-							$txt = "Results for order id ". $order_id." has been handed in by user". $user_id;
-							$headers = "From: ryanwriters.com" . "\r\n";
 
-       						mail($to,$subject,$txt,$headers) ;
+			$subject="Results for order ID: ".$order_id;			
+		$message = ' <html>
+		<head>
+			<title>Order complited</title>
+		</head>
+							<body style="background: #EEEEEE;">
+							<p>Results for order id '. $order_id.' has been handed in by '.$user_name.' ID:<strong>'. $user_id.'</strong>;</p>
+							<p> <strong>About:</strong> <br> '.$order_topic.' <br>
+							<small>deadline: <i>'.$deadline.'</i></small>
+							</p>
+							  <p>
+								<font color="#222"> <b>Time:</b>&nbsp;  &nbsp; '.$time.'</font>
+							  </p>
+
+							  <p>You may have a look at the results now!!! :)</p><br>
+							 <p> for more info vaist:http://ryanwriters.com/login</p><br>
+							</body>
+							</html>
+							';
+							$to="ryan@ryanwriters.com";
+								sendmail($email, $to, $subject);
+		
 						}else{
 							$error=1;
 						}

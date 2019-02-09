@@ -101,7 +101,7 @@ echo '<p class="text-danger pt-2">Dude All Fields Must Be Filled Up!</p>';
         $query="SELECT * FROM users WHERE name ='$name'";
         $results=$db->query($query);
       if (mysqli_num_rows($results)>0) {
-      	  $name_="";
+      	 $name_="";
         $status="";
         $bal="";
         foreach ($results as  $result) {

@@ -73,7 +73,6 @@ require "side_div.php";
 </tbody>
 </table>
 
-
   	  
 
 <?php
@@ -220,11 +219,10 @@ foreach ($results as $result) {
 					$(".show_menu_contents").toggle(500);
 				})
 					
-				
+				var topic='<?php echo $topic ?>';
 				$("#revise").submit(function(e){
 					e.preventDefault();
 					var order_id= "<?php echo $order_id?>";
-					var topic="<?php echo $topic ?>";
 					var rev_instructions=$("#message").val();
 					var submit= "submit"
 					var user_id="<?php echo $user_id ?>"

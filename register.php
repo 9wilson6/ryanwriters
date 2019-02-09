@@ -30,8 +30,8 @@ require "header.php";
 					  </div> 
 					  <div class="card-footer">
 					  	<div class="form-group">
-					  		<button type="submit" id="submit" class="btn btn-info btn-inline mr-1">Register</button>
-					  		<a href="login" class="btn btn-success btn-inline">Log In</a>
+					  		<button type="submit" id="submit" class="btn btn-info btn-inline mr-1 animated_btn">Register</button>
+					  		<a href="login" class="btn btn-success btn-inline animated_btn">Log In</a>
 					  	</div>
 					  	
 					  </div>

@@ -32,8 +32,8 @@ session_start();
 					  </div> 
 					  <div class="card-footer">
 					  	<div class="form-group">
-					  		<button type="submit" id="submit" class="btn btn-success btn-inline mr-1">Log in</button>
-					  	<a href="register" class="btn btn-info btn-inline">Register</a>
+					  		<button type="submit" id="submit" class="btn btn-success btn-inline mr-1 animated_btn">Log in</button>
+					  	<a href="register" class="btn btn-info btn-inline animated_btn">Register</a>
 					  	</div>
 					  	
 					  </div>

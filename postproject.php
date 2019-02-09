@@ -53,7 +53,7 @@ require("db_config.php");
 						$x=1;
 						for ($i=0; $i < count($temp_name_array); $i++) {
 							$name=str_replace("#","_", $name_array[$i]);
-							if (move_uploaded_file($temp_name_array[$i], "{$directory}"."{$name}")) {
+							if (move_uploaded_file($temp_name_array, "{$directory}"."{$name}")) {
 								// echo "{$name_array[$i]} was moved successfully <br>";
 								$success="Homework posted successfully";
 								$x+=1;

@@ -2,12 +2,11 @@
 
 if (isset($_POST['submit'])) {
 	require_once "db_config.php";
-
-	
+	require_once"functions.php";
+	$time=date('d/m/Y h:i:s a');
 	$order_id=$db->quote($_POST['order_id']);
 	$user_id=$_POST['user_id'];
 	$topic=$_POST['topic'];
-	
 	$query="SELECT email FROM users WHere id='$user_id'";
 		$result=$db->query($query);
 		foreach ($result as $res) {
@@ -23,9 +22,9 @@ if (isset($_POST['submit'])) {
      
 	$query="INSERT INTO onrevision(order_id, user_id, rev_instructions, deadline) VALUES ('$order_id', '$user_id', '$rev_instructions', '$datei')";
 	$result=$db->query($query);
-	require_once"functions.php";
+	
 	$deadline=$_POST['datei'];
-	$time=date('d/m/Y h:i:s a');
+	
 	//////////////////////////////////////////////////
 	$message = '
 							<html>
@@ -36,7 +35,7 @@ if (isset($_POST['submit'])) {
 								  <strong><font color="#FF8800"> Has been sent back for revision</font></strong><br>
 								  
 								<font color="#222"> <b>Time:</b>&nbsp;  &nbsp; '.$time.'</font>
-								 <p>Kindly check back and make the necessary adjustments</p><br>
+								 <p><font color="#C92624"><u><h3>Kindly check back and make the necessary adjustments within the new deadline</h3></u></font></p><br>
 							 <p> for more info vaist:http://ryanwriters.com/login</p><br>
 							  </p>
 
@@ -103,6 +102,32 @@ if (isset($_POST['submit'])) {
 						$query="DELETE FROM pedding_approval WHERE order_id='$order_id' AND user_id='$user_id'";
 						$results=$db->query($query);
 						echo $results;
+						//////////////////////////////////////////////////////
+						$message = '
+							<html>
+							<body style="background: #EEEEEE;">
+							<p><strong><h1>We have good news for you!!!!!!</h1> <br>Order id:&nbsp;   &nbsp;'.$order_id.'</strong></p>
+							<p> <strong>About:</strong> <br> '.$topic.' <br></p>
+							  <p>
+								  <strong><font color="#16AF8B"> Has been approved you may go on and request more orders</font></strong><br>
+								  
+								<font color="#222"> <b>Time:</b>&nbsp;  &nbsp; '.$time.'</font>
+							 <p> for more info vaist:http://ryanwriters.com/login</p><br>
+							  </p>
+
+							  
+							</body>
+							</html>
+							';
+
+		$subject="Approval of the order ID: ".$order_id;
+		$to=$email;
+		$email="ryan@ryanwriters.com";
+		$sender_name=$user_name;
+		$receiver_name="Samryan";
+		sendmail($email, $to, $subject);
+						//////////////////////////////////////////////////
+
 					}else{
 				echo $results;
 			}

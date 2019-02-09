@@ -19,7 +19,6 @@ if (!empty($name) && !empty($password)) {
 
 $query="SELECT id, name, password FROM users WHERE name='$name' and User_type='Admin'";
 $results=$db->query($query);
-
         foreach ($results as $result) {
         	$password_=$result['password'];
         	$name_= $result['name'];
@@ -69,7 +68,7 @@ $results=$db->query($query);
 					  </div> 
 					  <div class="card-footer">
 					  	<div class="form-group">
-					  		<button type="submit" name="submit" class="btn btn-success btn-inline">Log in</button>
+					  		<button type="submit" name="submit" class="btn btn-success btn-inline animated_btn">Log in</button>
 					  	<!-- <a href="register" class="btn btn-info btn-inline">Register</a> -->
 					  	</div>
 					  	
